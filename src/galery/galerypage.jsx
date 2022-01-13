@@ -32,7 +32,7 @@ const Galery = ()=>{
     },[]);
     return (
         <>
-        <h1>Gallery Page</h1>
+        <h1>gallery Page</h1>
         <div className={styles.grid}>
             {data?.map((item)=>(
                 <Card  key={item.id} url={item.urls.regular}/>
