@@ -1,19 +1,48 @@
 import axios from "axios";
 import React from "react";
 import styles from "./galerypage.module.css";
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Modal from '@mui/material/Modal';
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
+
+function BasicModal({url}) {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  return (
+    <div>
+      <Button onClick={handleOpen}>View Image</Button>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <img style={{width: '100%', height: '100%'}} src={url}/>
+        </Box>
+      </Modal>
+    </div>
+  );
+}
 const Card = ({url}) => {
-    const [name,setName] = React.useState(styles.card)
-     const handleClick = ()=>{
-        if(name == styles.card){
-            setName(styles.card1)
-        }
-        else{
-            setName(styles.card)
-        }
-    }
     return (
-        <div onClick={handleClick} className={name}>
+        <div className={styles.card}>
             <img src={url} alt="img"/>
+            <BasicModal url={url}/>
         </div>
     )
 }
@@ -31,7 +60,7 @@ const Galery = ()=>{
     },[]);
     return (
         <>
-        <h1>gallery Page</h1>
+        <h1>Wall Galery</h1>
         <div className={styles.grid}>
             {data?.map((item)=>(
                 <Card  key={item.id} url={item.urls.regular}/>
