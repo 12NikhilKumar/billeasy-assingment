@@ -23,7 +23,7 @@ const Galery = ()=>{
     React.useEffect(()=>{
         const config = {
             method: 'GET',
-            url: 'http://www.mocky.io/v2/5ecb5c353000008f00ddd5a0'
+            url: 'https://www.mocky.io/v2/5ecb5c353000008f00ddd5a0'
         }
         axios(config)
         .then((res)=>{
