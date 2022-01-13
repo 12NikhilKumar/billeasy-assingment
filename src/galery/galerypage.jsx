@@ -19,7 +19,6 @@ const Card = ({url}) => {
 }
 const Galery = ()=>{
     const [data,setData] = React.useState(null);
-    const [extend,setExtend] = React.useState(false);
     React.useEffect(()=>{
         const config = {
             method: 'GET',
