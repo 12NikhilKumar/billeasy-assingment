@@ -31,10 +31,10 @@ const Home = ()=>{
     return (
         <div>
             {data?(
-                <div>
-            <ArrowBackIosNewIcon onClick={decrement}/>
-            <img src={data[count].urls.regular}/>
-            <ArrowForwardIosIcon onClick={increment}/>
+                <div style={{width: '70%',margin:'auto',height:'600px',marginTop:'150px',padding:'1rem',disply:'flex',background:'black'}}>
+                     <ArrowBackIosNewIcon style={{color:'aqua',fontSize:'150px'}} onClick={decrement}/>
+                        <img style={{width: '70%',height:'90%',border:'10px solid white'}} src={data[count].urls.regular}/>
+                        <ArrowForwardIosIcon style={{color:'aqua',fontSize:'150px'}} onClick={increment}/>
             </div>):(
                 <h1>loding</h1>
             )}
