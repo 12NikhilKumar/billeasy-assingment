@@ -4,14 +4,14 @@ import Galery from './galery/galerypage';
 import { BrowserRouter } from 'react-router-dom';
 import AllRoutes from './routes/allroutes';
 import Home from './galery/home';
+import NavBar from './copmonents/navbar';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <AllRoutes>
-          <Home/>
-        </AllRoutes>
+        <NavBar/>
+        <AllRoutes/>
       </BrowserRouter>
     </div>
   );
